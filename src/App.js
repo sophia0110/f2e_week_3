@@ -1,12 +1,17 @@
-
 import "./App.css";
+import {Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import ToDoPage from "./pages/ToDoPage"
 
 function App() {
   return (
-    <div className="App w-full h-[calc(100vh-12.5vh)]">
-      <HomePage></HomePage>
-    </div>
+    <>
+      <Routes>
+        <Route path={"/"} element={<HomePage />} />
+        <Route path={"/f2e_week_3"} element={<HomePage />} />
+        <Route path={"/f2e_week_3/todo"} element={<ToDoPage />} />
+      </Routes>
+    </>
   );
 }
 
