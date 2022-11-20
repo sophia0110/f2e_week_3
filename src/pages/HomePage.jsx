@@ -26,7 +26,7 @@ const HomePage = () => {
         <div className="w-24 h-24 bg-no-repeat  absolute bottom-[30%] left-[12%]   bg-[url('./imgs/home/home_1.png')]"></div>
         <div className="w-32 h-24 bg-no-repeat  absolute bottom-[10%] left-[32%]   bg-[url('./imgs/home/home_2.png')]"></div>
         <div className="w-96 h-48 bg-no-repeat bg-cover absolute bottom-0 left-0   bg-[url('./imgs/home/home_5.png')]"></div>
-        <BigButton className="absolute bottom-[10%] right-[10%] w-48" value={"開始挑戰"} to={"/f2e_week_3/todo"}></BigButton>
+        <BigButton className="absolute bottom-[10%] right-[10%] w-48" value={"開始挑戰"} to={"/f2e_week_3/guide"}></BigButton>
       </div>
     </>
   );

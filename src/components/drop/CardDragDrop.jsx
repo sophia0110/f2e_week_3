@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, {
+  useState,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import { Draggable, DragDropContext, Droppable } from "react-beautiful-dnd";
 import Card from "../card/Card";
-const CardDragDrop = () => {
-  const [items, setItems] = useState(["A", "B", "C", "D"]);
+import data from "./data.json"
+const CardDragDrop = forwardRef((props, ref) => {
+  const [items, setItems] = useState(data);
+const [order, setOrder] =useState([]);
   const onDragEnd = (event) => {
-    console.log(event);
     const { source, destination } = event;
 
     if (!destination) {
@@ -20,36 +26,51 @@ const CardDragDrop = () => {
 
     //在destination.index位置貼上被拖曳的元素
     newItems.splice(destination.index, 0, remove);
-
     // 設定新的 items
     setItems(newItems);
+    setOrder(newItems.map(items=>items.id));
   };
+  const inputRef = useRef();
+  useImperativeHandle(ref, () => ({
+    array: order,
+  }));
+  console.log(inputRef.current);
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Droppable droppableId="drop-id">
-        {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
-            {items.map((item, i) => (
-              <div key={item}>
-                <Draggable draggableId={item.toString()} index={i} key={item}>
-                  {(provided) => (
-                    <div
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                      ref={provided.innerRef}
-                    >
-                      {item}
-                      <Card></Card>
-                    </div>
-                  )}
-                </Draggable>
-              </div>
-            ))}
-            {provided.placeholder}
-          </div>
-        )}
-      </Droppable>
-    </DragDropContext>
+    <div ref={inputRef} value={order}>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable
+          droppableId="drop-id"
+          direction="horizontal"
+          isCombineEnabled={false}
+        >
+          {(provided) => (
+            <div
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+              className="flex justify-center"
+            >
+              {items.map((item, i) => (
+                <div key={item.id}>
+                  <Draggable draggableId={item.id} index={i} key={item.id}>
+                    {(provided) => (
+                      <div
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                        className="flex"
+                      >
+                        <Card value={item.content} name={item.id}></Card>
+                      </div>
+                    )}
+                  </Draggable>
+                </div>
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
+    </div>
   );
-};
+});
 export default CardDragDrop;
