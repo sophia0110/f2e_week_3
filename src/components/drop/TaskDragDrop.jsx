@@ -38,27 +38,21 @@ const TaskDragDrop = forwardRef((props, ref) => {
       return;
     }
 
-    // 拷貝新的items (來自state)
     let newItemObj = { ...itemObj };
 
-    // splice(start, deleteCount, item )
-    // 從source剪下被拖曳的元素
     const [remove] = newItemObj[source.droppableId].items.splice(
       source.index,
       1
     );
 
-    // 在destination位置貼上被拖曳的元素
     newItemObj[destination.droppableId].items.splice(
       destination.index,
       0,
       remove
     );
 
-    // set state新的 itemObj
     setItemObj(newItemObj);
 
-    // 計算sprint內的分數總和
     const newTotalScoreSum = newItemObj.sprintList.items.reduce(
       (acc, val) => acc + val.score,
       0

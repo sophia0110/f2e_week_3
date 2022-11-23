@@ -17,16 +17,12 @@ const [order, setOrder] =useState([]);
       return;
     }
 
-    // 拷貝新的items (來自state)
     let newItems = [...items];
 
-    // splice(start, deleteCount, item )
-    // 從source.index剪下被拖曳的元素
     const [remove] = newItems.splice(source.index, 1);
 
-    //在destination.index位置貼上被拖曳的元素
     newItems.splice(destination.index, 0, remove);
-    // 設定新的 items
+    
     setItems(newItems);
     setOrder(newItems.map(items=>items.id));
   };

@@ -30,6 +30,10 @@ npm install, yarn,yarn start
 
 無
 
+## 連結
+
+https://sophia0110.github.io/f2e_week_3/
+
 ## 設計稿
 
 https://www.figma.com/file/i4IzsZ7yQpDnEWFJWy33Y5/Scrum%E6%96%B0%E6%89%8B%E6%9D%91?t=TUxUdIWBBhKJE4gc-0
