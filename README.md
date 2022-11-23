@@ -17,6 +17,7 @@ npm install, yarn,yarn start
 ## 使用技術
 
 - react
+- yarn
 - tailwind CSS
 - react-router-dom
 - react-icons
@@ -28,3 +29,7 @@ npm install, yarn,yarn start
 ## 第三方服務
 
 無
+
+## 設計稿
+
+https://www.figma.com/file/i4IzsZ7yQpDnEWFJWy33Y5/Scrum%E6%96%B0%E6%89%8B%E6%9D%91?t=TUxUdIWBBhKJE4gc-0
