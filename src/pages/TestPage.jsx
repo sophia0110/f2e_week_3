@@ -46,7 +46,7 @@ const TaskPage = () => {
         <BigButton
           className="absolute bottom-[10%] right-[5%] w-48"
           value={"完成"}
-          to={"/f2e_week_3/finish"}
+          to={"/f2e_week_3/feedback"}
         ></BigButton>
       </div>
     </>

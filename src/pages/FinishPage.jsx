@@ -12,11 +12,13 @@ const FinishPage = () => {
           <div className="m-4 h-14 w-60 bg-[url('./imgs/logo.png')] bg-no-repeat"></div>
         </header>
 
-        <div className="absolute top-[30%] right-[30%] text-center text-2xl font-medium  text-white">
-          恭喜通過 Scrum新手村！
-          <br />
-          正式加入六角資訊的開發 A 組。
-          <br />
+        <div className="absolute top-[30%] w-full text-center text-2xl font-medium  text-white">
+          <div className=" justify-center">
+            恭喜通過 Scrum新手村！
+            <br />
+            正式加入六角資訊的開發 A 組。
+            <br />
+          </div>
         </div>
         <div className="absolute bottom-[30%] left-[12%]  h-24 w-24 bg-[url('./imgs/home/home_1.png')]   bg-no-repeat"></div>
         <div className="absolute bottom-[10%] left-[32%]  h-24 w-32 bg-[url('./imgs/home/home_2.png')]   bg-no-repeat"></div>
@@ -26,7 +28,7 @@ const FinishPage = () => {
           value={"再來一次"}
           to={"/f2e_week_3/"}
         ></BigButton>
-        <div className="absolute bottom-[0%] flex w-full justify-center bg-white content-center items-center">
+        <div className="absolute bottom-[0%] flex w-full content-center items-center justify-center bg-white">
           <div className=" m-4 h-12  w-36 items-center bg-[url('./imgs/jira.png')] bg-no-repeat"></div>
           <div className="m-2 h-8 w-60 items-center bg-[url('./imgs/confluence.png')] bg-no-repeat"></div>
         </div>

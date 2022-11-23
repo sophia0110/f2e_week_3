@@ -8,6 +8,7 @@ import TaskPage from "./pages/TaskPage";
 import ProcessPage from "./pages/ProcessPage";
 import TestPage from "./pages/TestPage";
 import FinishPage from "./pages/FinishPage";
+import FeedBackPage from "./pages/FeedBackPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path={"/f2e_week_3/task"} element={<TaskPage  />} />
         <Route path={"/f2e_week_3/process"} element={<ProcessPage />} />
         <Route path={"/f2e_week_3/test"} element={<TestPage />} />
+        <Route path={"/f2e_week_3/feedback"} element={<FeedBackPage />} />
         <Route path={"/f2e_week_3/finish"} element={<FinishPage />} />
       </Routes>
     </>
