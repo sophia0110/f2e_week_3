@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import CardDragDrop from "../components/drop/CardDragDrop";
 import AlertDialog from "../components/dialog/AlertDialog";
+import BigButton from "../components/button/BigButton";
 const ToDoPage = () => {
   const getValue = useRef();
   const [isAnswer, setIsAnswer] = useState(false);
@@ -27,7 +28,9 @@ const ToDoPage = () => {
               <div className="text-2xl">的方式調整優先順序</div>
             </div>
             <div className="flex justify-between">
-              <div className="absolute top-[35%] left-[10%] text-3xl text-white">產品清單</div>
+              <div className="absolute top-[35%] left-[10%] text-3xl text-white">
+                產品清單
+              </div>
               <div className="h-full w-full rounded-lg border-4 border-white p-4 text-center text-2xl font-medium text-white">
                 <CardDragDrop ref={getValue} />
               </div>
@@ -43,7 +46,17 @@ const ToDoPage = () => {
         <div className="absolute bottom-[10%] left-[8%]  h-24 w-24 bg-[url('./imgs/dice.png')] bg-no-repeat"></div>
       </div>
       <div onClick={onButtonClick} className="m-0">
-        <AlertDialog isAnswer={isAnswer} to={'/f2e_week_3/member'} val={"哦歐！排序錯誤，請再調整順序"}></AlertDialog>
+        {isAnswer ? (
+          <BigButton
+            className="absolute bottom-[10%] right-[10%] "
+            value={"前往下一關"}
+            to={"/f2e_week_3/member"}
+          ></BigButton>
+        ) : (
+          <AlertDialog
+            val={"哦歐！排序錯誤，請再調整順序"}
+          ></AlertDialog>
+        )}
       </div>
     </>
   );

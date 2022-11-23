@@ -5,6 +5,9 @@ import ToDoPage from "./pages/ToDoPage";
 import GuidePage from "./pages/GuidePage";
 import MemberPage from "./pages/MemberPage";
 import TaskPage from "./pages/TaskPage";
+import ProcessPage from "./pages/ProcessPage";
+import TestPage from "./pages/TestPage";
+import FinishPage from "./pages/FinishPage";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path={"/f2e_week_3/guide"} element={<GuidePage />} />
         <Route path={"/f2e_week_3/member"} element={<MemberPage  />} />
         <Route path={"/f2e_week_3/task"} element={<TaskPage  />} />
+        <Route path={"/f2e_week_3/process"} element={<ProcessPage />} />
+        <Route path={"/f2e_week_3/test"} element={<TestPage />} />
+        <Route path={"/f2e_week_3/finish"} element={<FinishPage />} />
       </Routes>
     </>
   );

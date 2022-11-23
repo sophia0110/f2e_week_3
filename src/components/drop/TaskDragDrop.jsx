@@ -1,10 +1,11 @@
 import React, { useState, forwardRef } from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import clsx from "clsx";
 import TackCard from "../card/TaskCard";
 import { nanoid } from "nanoid";
 import AlertDialog from "../dialog/AlertDialog";
 import BigButton from "../button/BigButton";
-import clsx from "clsx";
+
 const TaskDragDrop = forwardRef((props, ref) => {
   const [itemObj, setItemObj] = useState({
     productBacklog: {
@@ -130,9 +131,9 @@ const TaskDragDrop = forwardRef((props, ref) => {
           ></AlertDialog>
         ) : (
           <BigButton
-            className={clsx('absolute bottom-[10%] right-[10%] w-48',totalScoreSum <= 0?'hidden':'')}
+            className={clsx('absolute bottom-[10%] right-[1%] w-56',totalScoreSum <= 0?'hidden':'')}
             value={"準備好了！開始 Sprint"}
-            to={"/f2e_week_3/guide"}
+            to={"/f2e_week_3/process"}
           ></BigButton>
         )}
       </DragDropContext>

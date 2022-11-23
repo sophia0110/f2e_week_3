@@ -1,11 +1,11 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import BigButton from "../button/BigButton";
-export default function AlertDialog({isAnswer,to,val}) {
+export default function AlertDialog({ val }) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -15,20 +15,13 @@ export default function AlertDialog({isAnswer,to,val}) {
   const handleClose = () => {
     setOpen(false);
   };
-
-  useEffect(() => {
-    if (isAnswer === true) {
-      console.log(isAnswer);
-      setOpen(false);
-      setTimeout(() => {
-        window.location.assign(to);
-      }, 1500);
-    }
-  }, [isAnswer,to]);
   return (
-    <div className="absolute bottom-[0%] left-[70%]">
+    <div className="absolute bottom-[10%] right-[10%] ">
       <Button onClick={handleClickOpen}>
-        <BigButton className="w-48" value={"完成"}></BigButton>
+        <BigButton
+          className="w-48"
+          value={"完成"}
+        ></BigButton>
       </Button>
       <Dialog
         open={open}
@@ -38,7 +31,7 @@ export default function AlertDialog({isAnswer,to,val}) {
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-          {val}
+            {val}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
