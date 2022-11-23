@@ -8,7 +8,6 @@ const ToDoPage = () => {
   const onButtonClick = () => {
     const order = getValue.current.array;
     const answer = "D,C,B,A";
-    console.log(order);
     if (order.toString() === answer) {
       setIsAnswer(true);
     } else {

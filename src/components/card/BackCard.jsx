@@ -1,7 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 const BackCard = ({ value, definite }) => {
-  console.log(definite);
   return (
     <div
       className={clsx(

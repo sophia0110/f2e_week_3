@@ -30,7 +30,7 @@ const [order, setOrder] =useState([]);
   useImperativeHandle(ref, () => ({
     array: order,
   }));
-  console.log(inputRef.current);
+  
   return (
     <div ref={inputRef} value={order}>
       <DragDropContext onDragEnd={onDragEnd}>
